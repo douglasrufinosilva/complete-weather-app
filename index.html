@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="leftInfo">
+            <div class="pictureGradient"></div>
+            <div class="todayInfo">
+                <h2>Domingo</h2>
+                <span>22 Out 2023</span>
+                <div>
+                    <i class='bx bx-current-location'></i>
+                    <span>Rio de Janeiro, BR</span>
+                </div>
+            </div>
+            <div class="todayWeather">
+                <i class='bx bx-sun'></i>
+                <h1 class="weatherTemp">25°C</h1>
+                <h3>Ensolarado</h3>
+            </div>
+        </div>
+
+        <div class="rightInfo">
+            <div class="dayInfo">
+                <div>
+                    <span class="title">PRECIPITAÇÃO</span>
+                    <span class="value">10 %</span>
+                </div>
+                <div>
+                    <span class="title">HUMIDADE</span>
+                    <span class="value">4 %</span>
+                </div>
+                <div>
+                    <span class="title">VELOCIDADE DO VENTO</span>
+                    <span class="value">6 km/h</span>
+                </div>
+            </div>
+
+            <ul class="daysList">
+                <li>
+                    <i class='bx bx-cloud-rain'></i>
+                    <span>Sab</span>
+                    <span class="dayTemp">15°C</span>
+                </li>
+                <li>
+                    <i class='bx bx-cloud'></i>
+                    <span>Dom</span>
+                    <span class="dayTemp">5°C</span>
+                </li>
+                <li>
+                    <i class='bx bx-cloud-lightning'></i>
+                    <span>Seg</span>
+                    <span class="dayTemp">35°C</span>
+                </li>
+                <li>
+                    <i class='bx bxs-sun'></i>
+                    <span>Ter</span>
+                    <span class="dayTemp">29°C</span>
+                </li>
+
+            </ul>
+            <div class="btnContainer">
+                <input class="searchInput" id="search">
+                <button class="btnLocation">Pesquisar Local</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
