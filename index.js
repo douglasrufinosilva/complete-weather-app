@@ -25,14 +25,33 @@ const weatherIconMap = {
     '50n': 'water'
 }
 
+
+
 function fetchWeatherData(location) {
     const apiData = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${key}&units=metric`
+
+    const weatherTranslations = {
+        'clear sky': 'céu limpo',
+        'few clouds': 'poucas nuvens',
+        'scattered clouds': 'nuvens dispersas',
+        'broken clouds': 'nuvens quebradas',
+        'shower rain': 'chuva passageira',
+        'light rain': 'chuva leve',
+        'rain': 'chuva',
+        'thunderstorm': 'trovoada',
+        'snow': 'neve',
+        'mist': 'névoa'
+    }
+    
+    function translateWeather(description) {
+        return weatherTranslations[description] || description;
+    }
 
     fetch(apiData)
     .then(response => response.json())
     .then
     (data => {
-        const todayWeather = data.list[0].weather[0].description
+        const todayWeather = translateWeather(data.list[0].weather[0].description)
 
         const todayTemperature = `${Math.round(data.list[0].main.temp)}°C`
 
@@ -73,9 +92,6 @@ function fetchWeatherData(location) {
                 <span class="value">${todayWindSpeed}</span>
             </div>
         `
-
-        console.log(data)
-
 
         const today = new Date()
         const nextDaysData = data.list.slice(1)
